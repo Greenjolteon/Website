@@ -84,7 +84,7 @@
                 for (let j = 0; j < 9; j++) {
                     const id = String.fromCharCode(97 + i) + (j + 1)
                     if (document.getElementById(id).value != board[i][j]) {
-                        document.getElementById(id).style.fontWeight = "bold"
+                        document.getElementById(id).style.color = "red"
                         document.getElementById(id).value = board[i][j]
                     }
                 }
