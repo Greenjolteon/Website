@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .box {
+            height: 50px;
+            width: 50px;
+            font-size: 48px;
+            text-align: center;
+        }
+        .center {
+            display: flex; 
+            flex-wrap: wrap;
+            width: 450px;
+            margin: auto;
+        }
+        .big-center {
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+        #but {
+            height: 50px;
+            width: 150px;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+    function isLegal(board, row, column, num) {
+        for (let i=0; i<9; i++) {
+            if (board[row][i] == num || board[i][column] == num) {return false}
+        }
+        startRow = row - row % 3
+        startCol = column - column % 3
+        for (let i=0; i<3; i++) {
+            for (let j=0; j<3; j++) {
+                if (board[i + startRow][j + startCol] == num) {return false}
+            }
+        }
+        return true
+    }
+
+    function boardSolve(board, row, column) {
+        if (row == 8 && column == 9) {return true}
+        if (column == 9) {
+            row += 1
+            column = 0
+        }
+        if (board[row][column] > 0) {return boardSolve(board, row, column+1)}
+        for (let k=1; k<10; k++) {
+            if (isLegal(board, row, column, k)) {
+                board[row][column] = k
+                if (boardSolve(board, row, column+1)) {return true}
+            }
+            board[row][column] = 0
+        }
+        return false
+    }
+
+    function dosmth() {
+        board = [
+    [document.getElementById('a1').value,document.getElementById('a2').value,document.getElementById('a3').value,document.getElementById('a4').value,document.getElementById('a5').value,document.getElementById('a6').value,document.getElementById('a7').value,document.getElementById('a8').value,document.getElementById('a9').value],
+    [document.getElementById('b1').value,document.getElementById('b2').value,document.getElementById('b3').value,document.getElementById('b4').value,document.getElementById('b5').value,document.getElementById('b6').value,document.getElementById('b7').value,document.getElementById('b8').value,document.getElementById('b9').value],
+    [document.getElementById('c1').value,document.getElementById('c2').value,document.getElementById('c3').value,document.getElementById('c4').value,document.getElementById('c5').value,document.getElementById('c6').value,document.getElementById('c7').value,document.getElementById('c8').value,document.getElementById('c9').value],
+    [document.getElementById('d1').value,document.getElementById('d2').value,document.getElementById('d3').value,document.getElementById('d4').value,document.getElementById('d5').value,document.getElementById('d6').value,document.getElementById('d7').value,document.getElementById('d8').value,document.getElementById('d9').value],
+    [document.getElementById('e1').value,document.getElementById('e2').value,document.getElementById('e3').value,document.getElementById('e4').value,document.getElementById('e5').value,document.getElementById('e6').value,document.getElementById('e7').value,document.getElementById('e8').value,document.getElementById('e9').value],
+    [document.getElementById('f1').value,document.getElementById('f2').value,document.getElementById('f3').value,document.getElementById('f4').value,document.getElementById('f5').value,document.getElementById('f6').value,document.getElementById('f7').value,document.getElementById('f8').value,document.getElementById('f9').value],
+    [document.getElementById('g1').value,document.getElementById('g2').value,document.getElementById('g3').value,document.getElementById('g4').value,document.getElementById('g5').value,document.getElementById('g6').value,document.getElementById('g7').value,document.getElementById('g8').value,document.getElementById('g9').value],
+    [document.getElementById('h1').value,document.getElementById('h2').value,document.getElementById('h3').value,document.getElementById('h4').value,document.getElementById('h5').value,document.getElementById('h6').value,document.getElementById('h7').value,document.getElementById('h8').value,document.getElementById('h9').value],
+    [document.getElementById('i1').value,document.getElementById('i2').value,document.getElementById('i3').value,document.getElementById('i4').value,document.getElementById('i5').value,document.getElementById('i6').value,document.getElementById('i7').value,document.getElementById('i8').value,document.getElementById('i9').value],
+    ]
+        if(boardSolve(board, 0, 0)) {
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    const id = String.fromCharCode(97 + i) + (j + 1)
+                    if (document.getElementById(id).value != board[i][j]) {
+                        document.getElementById(id).style.fontWeight = "bold"
+                        document.getElementById(id).value = board[i][j]
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img class="navbar-brand" src="heitch_logo.png" alt="Logo" width="50">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="main.html">Main Page</a>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown"> 
+                  <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Calculators</button> 
+                  <ul class="dropdown-menu"> 
+                    <li><a class="dropdown-item" href="calc.html">Math Calculator</a></li> 
+                    <li><a class="dropdown-item" href="sudoku.html">Sudoku Solver</a></li> 
+                  </ul> 
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown"> 
+                  <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Language Stuff</button> 
+                  <ul class="dropdown-menu"> 
+                    <li><a class="dropdown-item" href="langkeys.html">Zhilan Keyboard</a></li> 
+                  </ul> 
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <h1 class="text-center">Sudoku Solver</h1>
+    <div class="big-center">
+        <div class="center">
+          <input class="box" type="text" id="a1" >
+          <input class="box" type="text" id="a2">
+          <input class="box" type="text" id="a3">
+          <input class="box" type="text" id="a4">
+          <input class="box" type="text" id="a5">
+          <input class="box" type="text" id="a6">
+          <input class="box" type="text" id="a7">
+          <input class="box" type="text" id="a8">
+          <input class="box" type="text" id="a9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="b1">
+            <input class="box" type="text" id="b2">
+            <input class="box" type="text" id="b3">
+            <input class="box" type="text" id="b4">
+            <input class="box" type="text" id="b5">
+            <input class="box" type="text" id="b6">
+            <input class="box" type="text" id="b7">
+            <input class="box" type="text" id="b8">
+            <input class="box" type="text" id="b9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="c1">
+            <input class="box" type="text" id="c2">
+            <input class="box" type="text" id="c3">
+            <input class="box" type="text" id="c4">
+            <input class="box" type="text" id="c5">
+            <input class="box" type="text" id="c6">
+            <input class="box" type="text" id="c7">
+            <input class="box" type="text" id="c8">
+            <input class="box" type="text" id="c9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="d1">
+            <input class="box" type="text" id="d2">
+            <input class="box" type="text" id="d3">
+            <input class="box" type="text" id="d4">
+            <input class="box" type="text" id="d5">
+            <input class="box" type="text" id="d6">
+            <input class="box" type="text" id="d7">
+            <input class="box" type="text" id="d8">
+            <input class="box" type="text" id="d9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="e1">
+            <input class="box" type="text" id="e2">
+            <input class="box" type="text" id="e3">
+            <input class="box" type="text" id="e4">
+            <input class="box" type="text" id="e5">
+            <input class="box" type="text" id="e6">
+            <input class="box" type="text" id="e7">
+            <input class="box" type="text" id="e8">
+            <input class="box" type="text" id="e9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="f1">
+            <input class="box" type="text" id="f2">
+            <input class="box" type="text" id="f3">
+            <input class="box" type="text" id="f4">
+            <input class="box" type="text" id="f5">
+            <input class="box" type="text" id="f6">
+            <input class="box" type="text" id="f7">
+            <input class="box" type="text" id="f8">
+            <input class="box" type="text" id="f9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="g1">
+            <input class="box" type="text" id="g2">
+            <input class="box" type="text" id="g3">
+            <input class="box" type="text" id="g4">
+            <input class="box" type="text" id="g5">
+            <input class="box" type="text" id="g6">
+            <input class="box" type="text" id="g7">
+            <input class="box" type="text" id="g8">
+            <input class="box" type="text" id="g9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="h1">
+            <input class="box" type="text" id="h2">
+            <input class="box" type="text" id="h3">
+            <input class="box" type="text" id="h4">
+            <input class="box" type="text" id="h5">
+            <input class="box" type="text" id="h6">
+            <input class="box" type="text" id="h7">
+            <input class="box" type="text" id="h8">
+            <input class="box" type="text" id="h9">
+        </div>
+        <div class="center">
+            <input class="box" type="text" id="i1">
+            <input class="box" type="text" id="i2">
+            <input class="box" type="text" id="i3">
+            <input class="box" type="text" id="i4">
+            <input class="box" type="text" id="i5">
+            <input class="box" type="text" id="i6">
+            <input class="box" type="text" id="i7">
+            <input class="box" type="text" id="i8">
+            <input class="box" type="text" id="i9">
+        </div>
+        <input type="button" id="but" value="Solve" onclick="dosmth()">
+    </div>
+</body>
+</html>
