@@ -18,20 +18,6 @@
             text-decoration: underline dotted;
             cursor: help;
         }
-        .description {
-            display: none; /* Hide description by default */
-            position: absolute;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-            top: 20px;
-            left: 0;
-        }
-    .info:hover + .description {
-        display: block; /* Show description when hovered over */
-    }
     </style>
 </head>
 <body>
@@ -134,6 +120,95 @@
         <input type="radio" value="false" name="p" class="inputButton" id="pNo">
         <label for="pNo">No</label>
     </div>
+    <div>
+        <div id="genos" style="display: none;">
+            <p class="inputButton">Do you have the Exp. All in your bag?</p>
+            <input type="radio" value="true" name="genoss" class="inputButton" id="genossYes">
+            <label for="genossYes">Yes</label>
+            <input type="radio" value="false" name="genoss" class="inputButton" id="genossNo">
+            <label for="genossNo">No</label>
+            <div id="genossy" style="display: none;">
+                <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
+                <input type="radio" value="true" name="genossy" class="inputButton" id="genossyYes">
+                <label for="genossyYes">Yes</label>
+                <input type="radio" value="false" name="genossy" class="inputButton" id="genossyNo">
+                <label for="genossyNo">No</label>
+                <div id="genossyy" style="display: none;">
+                    <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+                    <input type="number" min="1" max="6" id="genossyyp" class="inputButton">
+                </div>
+                <div id="genossyn" style="display: none;">
+                    <div>
+                        <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
+                        <input type="number" min="1" max="6" id="genossynp" class="inputButton">
+                    </div>
+                    <div>
+                        <p class="inputButton">&emsp;&emsp;How many pokemon are in your party?</p>
+                        <input type="number" min="1" max="6" id="genossynn" class="inputButton">
+                    </div>
+                </div>
+            </div>
+            <div id="genossn" style="display: none;">
+                <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+                <input type="number" min="1" max="6" id="participate" class="inputButton">
+            </div>
+        </div>
+        <div id="gentfs" style="display: none;">
+            <p class="inputButton">Does one of your pokemon have an Exp. Share held?</p>
+            <input type="radio" value="true" name="gentfs" class="inputButton" id="gentfsYes">
+            <label for="gentfsYes">Yes</label>
+            <input type="radio" value="false" name="gentfs" class="inputButton" id="gentfsNo">
+            <label for="gentfsNo">No</label>
+            <div id="gentfsy" style="display: none;">
+                <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
+                <input type="radio" value="true" name="gentfsy" class="inputButton" id="gentfsyYes">
+                <label for="gentfsyYes">Yes</label>
+                <input type="radio" value="false" name="gentfsy" class="inputButton" id="gentfsyNo">
+                <label for="gentfsyNo">No</label>
+                <div id="gentfsyy" style="display: none;">
+                    <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+                    <input type="number" min="1" max="6" id="gentfsyyp" class="inputButton">
+                </div>
+                <div id="gentfsyn" style="display: none;">
+                    <div>
+                        <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
+                        <input type="number" min="1" max="6" id="gentfsynp" class="inputButton">
+                    </div>
+                    <div>
+                        <p class="inputButton">&emsp;&emsp;How many pokemon are holding an Exp. Share?</p>
+                        <input type="number" min="1" max="6" id="gentfsynn" class="inputButton">
+                    </div>
+                </div>
+            </div>
+            <div id="gentfsn" style="display: none;">
+                <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+                <input type="number" min="1" max="6" id="participate" class="inputButton">
+            </div>
+        </div>
+        <div id="gensps" style="display: none;">
+            <p class="inputButton">Did the pokemon participate in battle?</p>
+            <input type="radio" value="true" name="gensps" class="inputButton" id="gentfsYes">
+            <label for="gentfsYes">Yes</label>
+            <input type="radio" value="false" name="gensps" class="inputButton" id="gentfsNo">
+            <label for="gentfsNo">No</label>
+        </div>
+    </div>
+    <div>
+        <p class="inputButton">Are you the original trainer?</p>
+        <input type="radio" value="ot" name="t" class="inputButton" id="ot">
+        <label for="ot" >Yes</label>
+        <input type="radio" value="not" name="t" class="inputButton" id="not">
+        <label for="not">No</label>
+        <input type="radio" value="dcot" name="t" class="inputButton" id="dcot">
+        <label for="dcot">No, different language of origin</label>
+    </div>
+    <div>
+        <p class="inputButton">Is your pokemon past the level it should evolve?</p>
+        <input type="radio" value="true" name="v" class="inputButton" id="vYes">
+        <label for="vYes">Yes</label>
+        <input type="radio" value="false" name="v" class="inputButton" id="vNo">
+        <label for="vNo">No</label>
+    </div>
     <button onclick="fetchData()">Fetch Pokemon</button><br>
     <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none" class="inputButton">
     
@@ -142,6 +217,7 @@
             let pokemonName = document.getElementById("pokemonName").value.toLowerCase()
             let imgElement = document.getElementById("pokemonSprite")
             let text = document.getElementById("box")
+            let a, b, e, f, l, lp, s, t, v
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
                 .then(response => {
                     if (!response.ok) {
@@ -164,6 +240,103 @@
                     text.innerHTML = error
                 })
         }
+
+        const genButtons = document.getElementsByName('generation')
+        let x = document.getElementById('genos')
+        let y = document.getElementById('gentfs')
+        let z = document.getElementById('gensps')
+        genButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                console.log('You clicked generation', this.value);
+                if (this.value == "1") {
+                    x.style.display = "block"
+                    y.style.display = "none"
+                    z.style.display = "none"
+                    const genoss = document.getElementsByName('genoss')
+                    genoss.forEach(button2 => {
+                        button2.addEventListener('click', function() {
+                            if (this.value == "true") {
+                                document.getElementById('genossy').style.display = 'block'
+                                document.getElementById('genossn').style.display = 'none'
+                                const genossy = document.getElementsByName('genossy')
+                                genossy.forEach(button3 => {
+                                    button3.addEventListener('click', function() {
+                                        if (this.value == "true") {
+                                            document.getElementById('genossyy').style.display = 'block'
+                                            document.getElementById('genossyn').style.display = 'none'
+                                        } else if (this.value == "false") {
+                                            document.getElementById('genossyy').style.display = 'none'
+                                            document.getElementById('genossyn').style.display = 'block'
+                                        }
+                                    })
+                                })
+                            }
+                            if (this.value == "false") {
+                                document.getElementById('genossy').style.display = 'none'
+                                document.getElementById('genossn').style.display = 'block'
+                                const genossy = document.getElementsByName('genossy')
+                                genossy.forEach(button3 => {
+                                    button3.addEventListener('click', function() {
+                                        if (this.value == "true") {
+                                            document.getElementById('genossyy').style.display = 'block'
+                                            document.getElementById('genossyn').style.display = 'none'
+                                        } else if (this.value == "false") {
+                                            document.getElementById('genossyy').style.display = 'none'
+                                            document.getElementById('genossyn').style.display = 'block'
+                                        }
+                                    })
+                                })
+                            }
+                        })
+                    })
+                } else if (this.value == "2" || this.value == "3" || this.value == "4" || this.value == "5") {
+                    x.style.display = "none"
+                    y.style.display = "block"
+                    z.style.display = "none"
+                    const gentfs = document.getElementsByName('gentfs')
+                    gentfs.forEach(button2 => {
+                        button2.addEventListener('click', function() {
+                            if (this.value == "true") {
+                                document.getElementById('gentfsy').style.display = 'block'
+                                document.getElementById('gentfsn').style.display = 'none'
+                                const gentfsy = document.getElementsByName('gentfsy')
+                                gentfsy.forEach(button3 => {
+                                    button3.addEventListener('click', function() {
+                                        if (this.value == "true") {
+                                            document.getElementById('gentfsyy').style.display = 'block'
+                                            document.getElementById('gentfsyn').style.display = 'none'
+                                        } else if (this.value == "false") {
+                                            document.getElementById('gentfsyy').style.display = 'none'
+                                            document.getElementById('gentfsyn').style.display = 'block'
+                                        }
+                                    })
+                                })
+                            }
+                            if (this.value == "false") {
+                                document.getElementById('gentfsy').style.display = 'none'
+                                document.getElementById('gentfsn').style.display = 'block'
+                                const gentfsy = document.getElementsByName('gentfsy')
+                                gentfsy.forEach(button3 => {
+                                    button3.addEventListener('click', function() {
+                                        if (this.value == "true") {
+                                            document.getElementById('gentfsyy').style.display = 'block'
+                                            document.getElementById('gentfsyn').style.display = 'none'
+                                        } else if (this.value == "false") {
+                                            document.getElementById('gentfsyy').style.display = 'none'
+                                            document.getElementById('gentfsyn').style.display = 'block'
+                                        }
+                                    })
+                                })
+                            }
+                        })
+                    })
+                } else {
+                    x.style.display = "none"
+                    y.style.display = "none"
+                    z.style.display = "block"
+                }
+            })
+        })
     </script>
 </body>
 </html>
