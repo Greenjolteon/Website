@@ -1,342 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        .inputButton {
-            display: inline-block;
-            margin-left: 10px;
-        }
-        p {
-            font-weight: bold;
-        }
-        .info {
-            text-decoration: underline dotted;
-            cursor: help;
-        }
+      .inputButton {
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      p {
+        font-weight: bold;
+      }
+
+      .info {
+        text-decoration: underline dotted;
+        cursor: help;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container-fluid">
-            <img class="navbar-brand" src="heitch_logo.png" alt="Logo" width="50">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link text-light" href="main.html">Main Page</a>
-              </li>
-              <li class="nav-item">
-                <div class="dropdown"> 
-                  <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Calculators</button> 
-                  <ul class="dropdown-menu"> 
-                    <li><a class="dropdown-item" href="calc.html">Math Calculator</a></li> 
-                    <li><a class="dropdown-item" href="sudoku.html">Sudoku Solver</a></li> 
-                  </ul> 
-                </div>
-              </li>
-              <li class="nav-item">
-                <div class="dropdown"> 
-                 <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Language Stuff</button> 
-                  <ul class="dropdown-menu"> 
-                    <li><a class="dropdown-item" href="langkeys.html">Zhilan Keyboard</a></li> 
-                  </ul> 
-                </div>
-              </li>
-              <li class="nav-item">
-                <div class="dropdown">
-                 <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Games</button>
-                  <ul class="dropdown-menu">
-                   <li><a class="dropdown-item" href="constumper.html">Constumper</a></li>
-                   <li><a class="dropdown-item" href="cps.html">Clicks Per Second</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <img class="navbar-brand" src="heitch_logo.png" alt="Logo" width="50">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="main.html">Main Page</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Calculators</button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="calc.html">Math Calculator</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="sudoku.html">Sudoku Solver</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Language Stuff</button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="langkeys.html">Zhilan Keyboard</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle bg-dark" data-bs-toggle="dropdown">Games</button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="constumper.html">Constumper</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="cps.html">Clicks Per Second</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <h1 class="text-center">Pokemon XP Calculator</h1>
     <div>
-        <p class="inputButton">What generation are you playing?</p>
-        <input type="radio" value="1" id="gen1" name="generation" class="inputButton">
-        <label for="gen1">Generation 1</label>
-        <input type="radio" value="2" id="gen2" name="generation" class="inputButton">
-        <label for="gen2">Generation 2</label>
-        <input type="radio" value="3" id="gen3" name="generation" class="inputButton">
-        <label for="gen3">Generation 3</label>
-        <input type="radio" value="4" id="gen4" name="generation" class="inputButton">
-        <label for="gen4">Generation 4</label>
-        <input type="radio" value="5" id="gen5" name="generation" class="inputButton">
-        <label for="gen5">Generation 5</label>
-        <input type="radio" value="6" id="gen6" name="generation" class="inputButton">
-        <label for="gen6">Generation 6</label>
-        <input type="radio" value="7" id="gen7plus" name="generation" class="inputButton">
-        <label for="gen7plus">Generation 7+</label>   
+      <p class="inputButton">What generation are you playing?</p>
+      <input type="radio" value="1" id="gen1" name="generation" class="inputButton">
+      <label for="gen1">Generation 1</label>
+      <input type="radio" value="2" id="gen2" name="generation" class="inputButton">
+      <label for="gen2">Generation 2</label>
+      <input type="radio" value="3" id="gen3" name="generation" class="inputButton">
+      <label for="gen3">Generation 3</label>
+      <input type="radio" value="4" id="gen4" name="generation" class="inputButton">
+      <label for="gen4">Generation 4</label>
+      <input type="radio" value="5" id="gen5" name="generation" class="inputButton">
+      <label for="gen5">Generation 5</label>
+      <input type="radio" value="6" id="gen6" name="generation" class="inputButton">
+      <label for="gen6">Generation 6</label>
+      <input type="radio" value="7" id="gen7plus" name="generation" class="inputButton">
+      <label for="gen7plus">Generation 7+</label>
     </div>
     <div>
-        <p class="inputButton">Is the opposing pokemon wild?</p>
-        <input type="radio" value="true" name="a" class="inputButton" id="aYes">
-        <label for="aYes">Yes</label>
-        <input type="radio" value="false" name="a" class="inputButton" id="aNo">
-        <label for="aNo">No</label>
+      <p class="inputButton">Is the opposing pokemon wild?</p>
+      <input type="radio" value="true" name="a" class="inputButton" id="aYes">
+      <label for="aYes">Yes</label>
+      <input type="radio" value="false" name="a" class="inputButton" id="aNo">
+      <label for="aNo">No</label>
     </div>
     <div>
-        <p class="inputButton">What pokemon are you fighting against?</p>
-        <input type="text" id="pokemonName" placeholder="Enter Pokemon name" class="inputButton">
+      <p class="inputButton">What pokemon are you fighting against?</p>
+      <input type="text" id="pokemonName" placeholder="Enter Pokemon name" class="inputButton">
     </div>
     <div>
-        <p class="inputButton">Is your pokemon holding a lucky egg?</p >
-        <input type="radio" value="true" name="e" class="inputButton" id="eYes">
-        <label for="eYes">Yes</label>
-        <input type="radio" value="false" name="e" class="inputButton" id="eNo">
-        <label for="eNo">No</label>
+      <p class="inputButton">Is your pokemon holding a lucky egg?</p>
+      <input type="radio" value="true" name="e" class="inputButton" id="eYes">
+      <label for="eYes">Yes</label>
+      <input type="radio" value="false" name="e" class="inputButton" id="eNo">
+      <label for="eNo">No</label>
     </div>
     <div>
-        <p class="inputButton">Does your pokemon have high affection/friendship (Gen 6+)?</p>
-        <input type="radio" value="true" name="f" class="inputButton" id="fYes">
-        <label for="fYes" class="info" title="Affection of two hearts or more in Gen 6-USUM, 100 or higher friendship in PE, or 220 or higher friendship in SwSh onward">Yes</label>
-        <input type="radio" value="false" name="f" class="inputButton" id="fNo">
-        <label for="fNo">No</label>
+      <p class="inputButton">Does your pokemon have high affection/friendship (Gen 6+)?</p>
+      <input type="radio" value="true" name="f" class="inputButton" id="fYes">
+      <label for="fYes" class="info" title="Affection of two hearts or more in Gen 6-USUM, 100 or higher friendship in PE, or 220 or higher friendship in SwSh onward">Yes</label>
+      <input type="radio" value="false" name="f" class="inputButton" id="fNo">
+      <label for="fNo">No</label>
     </div>
     <div>
-        <p class="inputButton">What level is the enemy pokemon?</p>
-        <input type="number" min="1" max="100" id="l" class="inputButton">
+      <p class="inputButton">What level is the enemy pokemon?</p>
+      <input type="number" min="1" max="100" id="l" class="inputButton">
     </div>
     <div>
-        <p class="inputButton">What level is your pokemon?</p>
-        <input type="number" min="1" max="100" id="lp" class="inputButton">
+      <p class="inputButton">What level is your pokemon?</p>
+      <input type="number" min="1" max="100" id="lp" class="inputButton">
     </div>
     <div>
-        <p class="inputButton">Do you have an <span class="info" title="Pass Power in Gen 5, O-Power in Gen 6, Rotom Power in USUM, or Exp. Charm in SwSh">Exp. Point Power</span> active?</p>
+        <p class="inputButton">Do you have an <span class="info" title="Pass Power in Gen 5, O-Power in Gen 6, Rotom Power in USUM, or Exp. Charm in SwSh">Exp. Point Power</span> active? </p>
         <input type="radio" value="true" name="p" class="inputButton" id="pYes">
-        <label for="pYes" >Yes</label>
+        <label for="pYes">Yes</label>
         <input type="radio" value="false" name="p" class="inputButton" id="pNo">
         <label for="pNo">No</label>
-    </div>
-    <div>
-        <div id="genos" style="display: none;">
-            <p class="inputButton">Do you have the Exp. All in your bag?</p>
-            <input type="radio" value="true" name="genoss" class="inputButton" id="genossYes">
-            <label for="genossYes">Yes</label>
-            <input type="radio" value="false" name="genoss" class="inputButton" id="genossNo">
-            <label for="genossNo">No</label>
-            <div id="genossy" style="display: none;">
-                <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
-                <input type="radio" value="true" name="genossy" class="inputButton" id="genossyYes">
-                <label for="genossyYes">Yes</label>
-                <input type="radio" value="false" name="genossy" class="inputButton" id="genossyNo">
-                <label for="genossyNo">No</label>
-                <div id="genossyy" style="display: none;">
-                    <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
-                    <input type="number" min="1" max="6" id="genossyyp" class="inputButton">
-                </div>
-                <div id="genossyn" style="display: none;">
-                    <div>
-                        <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
-                        <input type="number" min="1" max="6" id="genossynp" class="inputButton">
-                    </div>
-                    <div>
-                        <p class="inputButton">&emsp;&emsp;How many pokemon are in your party?</p>
-                        <input type="number" min="1" max="6" id="genossynn" class="inputButton">
-                    </div>
-                </div>
-            </div>
-            <div id="genossn" style="display: none;">
-                <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
-                <input type="number" min="1" max="6" id="participate" class="inputButton">
-            </div>
+        <div class="inputButton" id="genfp" style="display: none;">
+            <p class="inputButton">&emsp;Select your Pass Power:</p>
+            <input type="radio" value="0.5" name="pf" id="pfdaaa">
+            <label for="pfdaaa">↓↓↓</label>
+            <input type="radio" value="0.66" name="pf" id="pfdaa">
+            <label for="pfdaa">↓↓</label>
+            <input type="radio" value="0.8" name="pf" id="pfda">
+            <label for="pfda">↓</label>
+            <input type="radio" value="1.2" name="pf" id="pfua">
+            <label for="pfua">↑</label>
+            <input type="radio" value="1.5" name="pf" id="pfuaa">
+            <label for="pfuaa">↑↑</label>
+            <input type="radio" value="2" name="pf" id="pfuaaa">
+            <label for="pfuaaa">↑↑↑</label>
         </div>
-        <div id="gentfs" style="display: none;">
-            <p class="inputButton">Does one of your pokemon have an Exp. Share held?</p>
-            <input type="radio" value="true" name="gentfs" class="inputButton" id="gentfsYes">
-            <label for="gentfsYes">Yes</label>
-            <input type="radio" value="false" name="gentfs" class="inputButton" id="gentfsNo">
-            <label for="gentfsNo">No</label>
-            <div id="gentfsy" style="display: none;">
-                <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
-                <input type="radio" value="true" name="gentfsy" class="inputButton" id="gentfsyYes">
-                <label for="gentfsyYes">Yes</label>
-                <input type="radio" value="false" name="gentfsy" class="inputButton" id="gentfsyNo">
-                <label for="gentfsyNo">No</label>
-                <div id="gentfsyy" style="display: none;">
-                    <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
-                    <input type="number" min="1" max="6" id="gentfsyyp" class="inputButton">
-                </div>
-                <div id="gentfsyn" style="display: none;">
-                    <div>
-                        <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
-                        <input type="number" min="1" max="6" id="gentfsynp" class="inputButton">
-                    </div>
-                    <div>
-                        <p class="inputButton">&emsp;&emsp;How many pokemon are holding an Exp. Share?</p>
-                        <input type="number" min="1" max="6" id="gentfsynn" class="inputButton">
-                    </div>
-                </div>
-            </div>
-            <div id="gentfsn" style="display: none;">
-                <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
-                <input type="number" min="1" max="6" id="participate" class="inputButton">
-            </div>
-        </div>
-        <div id="gensps" style="display: none;">
-            <p class="inputButton">Did the pokemon participate in battle?</p>
-            <input type="radio" value="true" name="gensps" class="inputButton" id="gentfsYes">
-            <label for="gentfsYes">Yes</label>
-            <input type="radio" value="false" name="gensps" class="inputButton" id="gentfsNo">
-            <label for="gentfsNo">No</label>
+        <div class="inputButton" id="gensp" style="display: none;">
+            <p class="inputButton">&emsp;Select your Exp. Point Power:</p>
+            <input type="radio" value="1.2" name="ps" id="pso">
+            <label for="pfdaaa">Level 1</label>
+            <input type="radio" value="1.5" name="ps" id="pstw">
+            <label for="pfdaa">Level 2</label>
+            <input type="radio" value="2" name="ps" id="psth">
+            <label for="pfda">Level 3</label>
         </div>
     </div>
     <div>
-        <p class="inputButton">Are you the original trainer?</p>
-        <input type="radio" value="ot" name="t" class="inputButton" id="ot">
-        <label for="ot" >Yes</label>
-        <input type="radio" value="not" name="t" class="inputButton" id="not">
-        <label for="not">No</label>
-        <input type="radio" value="dcot" name="t" class="inputButton" id="dcot">
-        <label for="dcot">No, different language of origin</label>
+      <div id="genos" style="display: none;">
+        <p class="inputButton">Do you have the Exp. All in your bag?</p>
+        <input type="radio" value="true" name="genoss" class="inputButton" id="genossYes">
+        <label for="genossYes">Yes</label>
+        <input type="radio" value="false" name="genoss" class="inputButton" id="genossNo">
+        <label for="genossNo">No</label>
+        <div id="genossy" style="display: none;">
+          <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
+          <input type="radio" value="true" name="genossy" class="inputButton" id="genossyYes">
+          <label for="genossyYes">Yes</label>
+          <input type="radio" value="false" name="genossy" class="inputButton" id="genossyNo">
+          <label for="genossyNo">No</label>
+          <div id="genossyy" style="display: none;">
+            <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+            <input type="number" min="1" max="6" id="genossyyp" class="inputButton">
+          </div>
+          <div id="genossyn" style="display: none;">
+            <div>
+              <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
+              <input type="number" min="1" max="6" id="genossynp" class="inputButton">
+            </div>
+            <div>
+              <p class="inputButton">&emsp;&emsp;How many pokemon are in your party?</p>
+              <input type="number" min="1" max="6" id="genossynn" class="inputButton">
+            </div>
+          </div>
+        </div>
+        <div id="genossn" style="display: none;">
+          <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+          <input type="number" min="1" max="6" id="participate" class="inputButton">
+        </div>
+      </div>
+      <div id="gentfs" style="display: none;">
+        <p class="inputButton">Does one of your pokemon have an Exp. Share held?</p>
+        <input type="radio" value="true" name="gentfs" class="inputButton" id="gentfsYes">
+        <label for="gentfsYes">Yes</label>
+        <input type="radio" value="false" name="gentfs" class="inputButton" id="gentfsNo">
+        <label for="gentfsNo">No</label>
+        <div id="gentfsy" style="display: none;">
+          <p class="inputButton">&emsp;Did the pokemon gaining Exp participate in the battle?</p>
+          <input type="radio" value="true" name="gentfsy" class="inputButton" id="gentfsyYes">
+          <label for="gentfsyYes">Yes</label>
+          <input type="radio" value="false" name="gentfsy" class="inputButton" id="gentfsyNo">
+          <label for="gentfsyNo">No</label>
+          <div id="gentfsyy" style="display: none;">
+            <p class="inputButton">&emsp;&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+            <input type="number" min="1" max="6" id="gentfsyyp" class="inputButton">
+          </div>
+          <div id="gentfsyn" style="display: none;">
+            <div>
+              <p class="inputButton">&emsp;&emsp;How many of your pokemon were sent out but didn't participate in the battle?</p>
+              <input type="number" min="1" max="6" id="gentfsynp" class="inputButton">
+            </div>
+            <div>
+              <p class="inputButton">&emsp;&emsp;How many pokemon are holding an Exp. Share?</p>
+              <input type="number" min="1" max="6" id="gentfsynn" class="inputButton">
+            </div>
+          </div>
+        </div>
+        <div id="gentfsn" style="display: none;">
+          <p class="inputButton">&emsp;How many of your pokemon participated in the battle and haven't fainted?</p>
+          <input type="number" min="1" max="6" id="participate" class="inputButton">
+        </div>
+      </div>
+      <div id="gensps" style="display: none;">
+        <p class="inputButton">Did the pokemon participate in battle?</p>
+        <input type="radio" value="true" name="gensps" class="inputButton" id="gentfsYes">
+        <label for="gentfsYes">Yes</label>
+        <input type="radio" value="false" name="gensps" class="inputButton" id="gentfsNo">
+        <label for="gentfsNo">No</label>
+      </div>
     </div>
     <div>
-        <p class="inputButton">Is your pokemon past the level it should evolve?</p>
-        <input type="radio" value="true" name="v" class="inputButton" id="vYes">
-        <label for="vYes">Yes</label>
-        <input type="radio" value="false" name="v" class="inputButton" id="vNo">
-        <label for="vNo">No</label>
+      <p class="inputButton">Are you the original trainer?</p>
+      <input type="radio" value="ot" name="t" class="inputButton" id="ot">
+      <label for="ot">Yes</label>
+      <input type="radio" value="not" name="t" class="inputButton" id="not">
+      <label for="not">No</label>
+      <input type="radio" value="dcot" name="t" class="inputButton" id="dcot">
+      <label for="dcot">No, different language of origin</label>
     </div>
-    <button onclick="fetchData()">Fetch Pokemon</button><br>
+    <div>
+      <p class="inputButton">Is your pokemon past the level it should evolve?</p>
+      <input type="radio" value="true" name="v" class="inputButton" id="vYes">
+      <label for="vYes">Yes</label>
+      <input type="radio" value="false" name="v" class="inputButton" id="vNo">
+      <label for="vNo">No</label>
+    </div>
+    <button onclick="fetchData()">Fetch Pokemon</button>
+    <br>
     <img src="" alt="Pokemon Sprite" id="pokemonSprite" style="display: none" class="inputButton">
-    
     <script>
         function fetchData() {
             let pokemonName = document.getElementById("pokemonName").value.toLowerCase()
             let imgElement = document.getElementById("pokemonSprite")
-            let text = document.getElementById("box")
-            let a, b, e, f, l, lp, s, t, v
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`${pokemonName} isn't a pokemon dumdum`)
-                    }
-                    return response.json()
-                })
-                .then(data => {
-                    let pokemonSprite = data.sprites.front_default
-                    imgElement.src = pokemonSprite
-                    imgElement.style.display = "block"
-                    if (data.base_experience !== null) {
-                        text.innerHTML = data.base_experience
-                    } else {
-                        text.innerHTML = "null"
-                    }
-                })
-                .catch(error => {
-                    console.error(error)
-                    text.innerHTML = error
-                })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`${pokemonName} isn't a pokemon dumdum`)
+                }
+                return response.json()
+            })
+            .then(data => {
+                let pokemonSprite = data.sprites.front_default
+                imgElement.src = pokemonSprite
+                imgElement.style.display = "block"
+                let baseExperience = data.base_experience !== null ? data.base_experience : 0
+                console.log(baseExperience)
+                return baseExperience
+            })
+            .catch(error => {
+                console.error(error)
+            })
         }
+    
 
+      function getInfo() {
         const genButtons = document.getElementsByName('generation')
         let x = document.getElementById('genos')
         let y = document.getElementById('gentfs')
         let z = document.getElementById('gensps')
+        let a, b, e, f, l, lp, s, t, v
         genButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                console.log('You clicked generation', this.value);
-                if (this.value == "1") {
-                    x.style.display = "block"
-                    y.style.display = "none"
-                    z.style.display = "none"
-                    const genoss = document.getElementsByName('genoss')
-                    genoss.forEach(button2 => {
-                        button2.addEventListener('click', function() {
-                            if (this.value == "true") {
-                                document.getElementById('genossy').style.display = 'block'
-                                document.getElementById('genossn').style.display = 'none'
-                                const genossy = document.getElementsByName('genossy')
-                                genossy.forEach(button3 => {
-                                    button3.addEventListener('click', function() {
-                                        if (this.value == "true") {
-                                            document.getElementById('genossyy').style.display = 'block'
-                                            document.getElementById('genossyn').style.display = 'none'
-                                        } else if (this.value == "false") {
-                                            document.getElementById('genossyy').style.display = 'none'
-                                            document.getElementById('genossyn').style.display = 'block'
-                                        }
-                                    })
-                                })
-                            }
-                            if (this.value == "false") {
-                                document.getElementById('genossy').style.display = 'none'
-                                document.getElementById('genossn').style.display = 'block'
-                                const genossy = document.getElementsByName('genossy')
-                                genossy.forEach(button3 => {
-                                    button3.addEventListener('click', function() {
-                                        if (this.value == "true") {
-                                            document.getElementById('genossyy').style.display = 'block'
-                                            document.getElementById('genossyn').style.display = 'none'
-                                        } else if (this.value == "false") {
-                                            document.getElementById('genossyy').style.display = 'none'
-                                            document.getElementById('genossyn').style.display = 'block'
-                                        }
-                                    })
-                                })
-                            }
-                        })
+          button.addEventListener('click', function() {
+            console.log('You clicked generation', this.value)
+            if (this.value == "1") {
+              x.style.display = "block"
+              y.style.display = "none"
+              z.style.display = "none"
+              const genoss = document.getElementsByName('genoss')
+              genoss.forEach(button2 => {
+                button2.addEventListener('click', function() {
+                  if (this.value == "true") {
+                    document.getElementById('genossy').style.display = 'block'
+                    document.getElementById('genossn').style.display = 'none'
+                    const genossy = document.getElementsByName('genossy')
+                    genossy.forEach(button3 => {
+                      button3.addEventListener('click', function() {
+                        if (this.value == "true") {
+                          document.getElementById('genossyy').style.display = 'block'
+                          document.getElementById('genossyn').style.display = 'none'
+                        } else if (this.value == "false") {
+                          document.getElementById('genossyy').style.display = 'none'
+                          document.getElementById('genossyn').style.display = 'block'
+                        }
+                      })
                     })
-                } else if (this.value == "2" || this.value == "3" || this.value == "4" || this.value == "5") {
-                    x.style.display = "none"
-                    y.style.display = "block"
-                    z.style.display = "none"
-                    const gentfs = document.getElementsByName('gentfs')
-                    gentfs.forEach(button2 => {
-                        button2.addEventListener('click', function() {
-                            if (this.value == "true") {
-                                document.getElementById('gentfsy').style.display = 'block'
-                                document.getElementById('gentfsn').style.display = 'none'
-                                const gentfsy = document.getElementsByName('gentfsy')
-                                gentfsy.forEach(button3 => {
-                                    button3.addEventListener('click', function() {
-                                        if (this.value == "true") {
-                                            document.getElementById('gentfsyy').style.display = 'block'
-                                            document.getElementById('gentfsyn').style.display = 'none'
-                                        } else if (this.value == "false") {
-                                            document.getElementById('gentfsyy').style.display = 'none'
-                                            document.getElementById('gentfsyn').style.display = 'block'
-                                        }
-                                    })
-                                })
-                            }
-                            if (this.value == "false") {
-                                document.getElementById('gentfsy').style.display = 'none'
-                                document.getElementById('gentfsn').style.display = 'block'
-                                const gentfsy = document.getElementsByName('gentfsy')
-                                gentfsy.forEach(button3 => {
-                                    button3.addEventListener('click', function() {
-                                        if (this.value == "true") {
-                                            document.getElementById('gentfsyy').style.display = 'block'
-                                            document.getElementById('gentfsyn').style.display = 'none'
-                                        } else if (this.value == "false") {
-                                            document.getElementById('gentfsyy').style.display = 'none'
-                                            document.getElementById('gentfsyn').style.display = 'block'
-                                        }
-                                    })
-                                })
-                            }
-                        })
+                  }
+                  if (this.value == "false") {
+                    document.getElementById('genossy').style.display = 'none'
+                    document.getElementById('genossn').style.display = 'block'
+                    const genossy = document.getElementsByName('genossy')
+                    genossy.forEach(button3 => {
+                      button3.addEventListener('click', function() {
+                        if (this.value == "true") {
+                          document.getElementById('genossyy').style.display = 'block'
+                          document.getElementById('genossyn').style.display = 'none'
+                        } else if (this.value == "false") {
+                          document.getElementById('genossyy').style.display = 'none'
+                          document.getElementById('genossyn').style.display = 'block'
+                        }
+                      })
                     })
-                } else {
-                    x.style.display = "none"
-                    y.style.display = "none"
-                    z.style.display = "block"
+                  }
+                })
+              })
+            } else if (this.value == "2" || this.value == "3" || this.value == "4" || this.value == "5") {
+              x.style.display = "none"
+              y.style.display = "block"
+              z.style.display = "none"
+              const gentfs = document.getElementsByName('gentfs')
+              gentfs.forEach(button2 => {
+                button2.addEventListener('click', function() {
+                  if (this.value == "true") {
+                    document.getElementById('gentfsy').style.display = 'block'
+                    document.getElementById('gentfsn').style.display = 'none'
+                    const gentfsy = document.getElementsByName('gentfsy')
+                    gentfsy.forEach(button3 => {
+                        button3.addEventListener('click', function() {
+                        document.getElementById('gentfsyy').style.display = (this.value == "true") ? 'block' : 'none'
+                        document.getElementById('gentfsyn').style.display = (this.value == "false") ? 'block' : 'none'
+                      })
+                    })
+                  }
+                  if (this.value == "false") {
+                    document.getElementById('gentfsy').style.display = 'none'
+                    document.getElementById('gentfsn').style.display = 'block'
+                    const gentfsy = document.getElementsByName('gentfsy')
+                    gentfsy.forEach(button3 => {
+                      button3.addEventListener('click', function() {
+                        document.getElementById('gentfsyy').style.display = (this.value == "true") ? 'block' : 'none'
+                        document.getElementById('gentfsyn').style.display = (this.value == "false") ? 'block' : 'none'
+                      })
+                    })
+                  }
+                })
+              }) 
+              document.getElementsByName('p').forEach(pbutton => {
+                pbutton.addEventListener('click', function() {
+                console.log('h')
+                if (this.value == "true") {
+                    if (button.value == "5") {
+                        document.getElementById('genfp').style.display = 'block'
+                        document.getElementById('gensp').style.display = 'none'
+                    } else if (button.value == "6") {
+                        document.getElementById('genfp').style.display = 'none'
+                        document.getElementById('gensp').style.display = 'block'
+                    } else {
+                        document.getElementById('genfp').style.display = 'none'
+                        document.getElementById('gensp').style.display = 'none'
+                    }
                 }
+                })
+              })
+            } else {
+              x.style.display = "none"
+              y.style.display = "none"
+              z.style.display = "block"
+            }
+
+            document.getElementsByName('a').forEach(ab => {
+              ab.addEventListener('click', function() {
+                if (ab.value == "true") {
+                  a = 1
+                } else if (ab.value == "false" && parseInt(button.value) >= 6) {
+                  a = 1.5
+                }
+              })
             })
+            b = fetchData()
+            document.getElementsByName('e').forEach(eb => {
+              eb.addEventListener('click', function() {
+                if (eb.value == "true") {
+                  e = 1.5
+                } else if (eb.value == "false") {
+                  e = 1
+                }
+              })
+            })
+            document.getElementsByName('f').forEach(fb => {
+              fb.addEventListener('click', function() {
+                if (fb.value == "true") {
+                  if (button.value == "6") {
+                    f = 1.2
+                  } else if (parseInt(button.value) > 6) {
+                    f = 4915/4096
+                  }
+                } else if (fb.value == "false") {
+                  f = 1
+                }
+              })
+            })
+            l = document.getElementById('l').value
+            lp = document.getElementById('lp').value
+            // s :/
+            document.getElementsByName('t').forEach(tb => {
+              tb.addEventListener('click', function() {
+                if (tb.value == "ot") {
+                  t = 1
+                } else if (fb.value == "not") {
+                  t = 1.5
+                } else if (fb.value == "dcot") {
+                  t = 6963/4096
+                }
+              })
+            })
+            document.getElementsByName('v').forEach(vb => {
+              vb.addEventListener('click', function() {
+                if (vb.value == "true") {
+                  v = 4915/4096
+                } else if (vb.value == "false") {
+                  v = 1
+                }
+              })
+            })
+          })
         })
+      }
+
+      getInfo()
     </script>
-</body>
+  </body>
 </html>
